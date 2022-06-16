@@ -110,6 +110,7 @@ namespace Tuan05_TruongNgocThanh.Controllers
             
             return RedirectToAction("GioHang");
         }
+        [HttpGet]
         public ActionResult DatHang()
         {
             if (Session["TaiKhoan"] == null || Session["TaiKhoan"].ToString() == "")
@@ -126,14 +127,14 @@ namespace Tuan05_TruongNgocThanh.Controllers
             ViewBag.TongSoLuongSanPham = TongSoLuongSanPham();
             return View(lstGiohang);
         }
-        [HttpGet]
+        
         public ActionResult DatHang(FormCollection collection)
         {
             DonHang dh = new DonHang();
             KhachHang kh = (KhachHang)Session["TaiKhoan"];
             Sach s = new Sach();
             List<Giohang> gh = Laygiohang();
-            var ngaygiao = string.Format("{0:MM/dd/yyyy}", collection["NgayGiao"]);
+            var ngaygiao = String.Format("{0:MM/dd/yyyy}", collection["NgayGiao"]);
 
             dh.makh = kh.makh;
             dh.ngaydat = DateTime.Now;
@@ -143,14 +144,14 @@ namespace Tuan05_TruongNgocThanh.Controllers
 
             data.DonHangs.InsertOnSubmit(dh);
             data.SubmitChanges();
-            foreach(var item in gh)
+            foreach (var item in gh)
             {
                 ChiTietDonHang ctdh = new ChiTietDonHang();
                 ctdh.madon = dh.madon;
                 ctdh.masach = item.masach;
                 ctdh.soluong = item.iSoluong;
                 ctdh.gia = (decimal)item.giaban;
-                s = data.Saches.Single(n=>n.masach == item.masach);
+                s = data.Saches.Single(n => n.masach == item.masach);
                 s.soluongton -= ctdh.soluong;
                 data.SubmitChanges();
 
@@ -158,7 +159,7 @@ namespace Tuan05_TruongNgocThanh.Controllers
             }
             data.SubmitChanges();
             Session["Giohang"] = null;
-            return RedirectToAction("XacnhanDonhang","GioHang");
+            return RedirectToAction("XacnhanDonhang", "GioHang");
         }
         public ActionResult XacnhanDonhang()
         {

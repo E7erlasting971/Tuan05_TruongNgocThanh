@@ -1,8 +1,9 @@
 ﻿@model IEnumerable<Tuan05_TruongNgocThanh.Controllers.Giohang>
-
+@using Tuan05_TruongNgocThanh.Models
 @{
     ViewBag.Title = "DatHang";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    KhachHang kh = (KhachHang)Session["TaiKhoan"];
 }
 
 <h2>DatHang</h2>
@@ -54,7 +55,6 @@
         </tr>
     }
     <tr style="font-weight:bold; text-align:left; color:red">
-
         <td colspan="3">Số lượng sách: @ViewBag.Tongsoluong</td>
         <td colspan="4">Số loại sách: @ViewBag.Tongsoluongsanpham</td>
         <td colspan="5">Tổng tiền: @String.Format("{0:0,0}", ViewBag.Tongtien) VNĐ</td>
@@ -66,11 +66,8 @@
         </td>
     </tr>
 </table>
-@using Tuan05_TruongNgocThanh.Models
+
 <h2 style="text-align:center"> Thông tin đặt hàng</h2>
-@{
-    KhachHang kh = (KhachHang)Session["TaiKhoan"];
-}
 <table align="center">
     @using (Html.BeginForm())
     {
@@ -101,7 +98,7 @@
             <td style="font-weight:bold"><input type="date" name="NgayGiao" /></td>
         </tr>
         <tr style="height:40px">
-            <td>Ngày giao: </td>
+            <td></td>
             <td style="font-weight:bold"><input type="submit" value="Xác nhận" class="btn btn-success" /></td>
         </tr>
     }
