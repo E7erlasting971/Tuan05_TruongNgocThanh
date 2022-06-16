@@ -72,6 +72,7 @@ namespace Tuan05_TruongNgocThanh.Controllers
             else
             {
                 ViewBag.ThongBao = "Tên đăng nhập hoặc mật khẩu không đúng";
+                return RedirectToAction("DangNhap", "NguoiDung");
             }
             return RedirectToAction("Index","Home");
         }

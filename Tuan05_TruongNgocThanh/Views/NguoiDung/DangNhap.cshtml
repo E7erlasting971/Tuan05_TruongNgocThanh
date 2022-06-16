@@ -1,4 +1,4 @@
-﻿@model Tuan05_TruongNgocThanh.Models.KhachHang
+﻿
 
 @{
     ViewBag.Title = "DangNhap";
@@ -6,37 +6,38 @@
 }
 
 <h2>DangNhap</h2>
-@ViewBag.ThongBao
+<br />
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-
-
-        @using (Html.BeginForm())
-        {
-            @Html.ValidationSummary(true)
-            <tr style="height:40px">
-                <td>Tên đăng nhập: </td>
-                <td>
-                    @Html.TextBox("tendangnhap")
-                </td>
-            </tr>
-            <br />
-            <tr style="height:40px">
-                <td align="right">Mật khẩu: </td>
-                <td>
-                    @Html.Password("matkhau")
-                </td>
-            </tr>
-            <tr style="height:40px">
-                <td></td>
-                <td>
-                    <input type="Submit" value="Đăng nhập" />
-                </td>
-            </tr>
-        }
+        <h4 style="color:red; text-align:center">
+            @ViewBag.ThongBao
+        </h4>
+        <tr style="height:40px">
+            <td>Tên đăng nhập: </td>
+            <td>
+                @Html.TextBox("tendangnhap")
+            </td>
+        </tr>
+        <br />
+        <br />
+        <tr style="height:40px">
+            <td align="right">Mật khẩu: </td>
+            <td>
+                @Html.Password("matkhau")
+            </td>
+        </tr>
+        <br />
+        <br />
+        <tr style="height:40px">
+            <td></td>
+            <td>
+                <input type="Submit" value="Đăng nhập" />
+            </td>
+        </tr>
+        
 
 
     </div>
