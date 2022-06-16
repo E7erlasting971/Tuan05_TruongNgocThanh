@@ -96,5 +96,17 @@ namespace Tuan05_TruongNgocThanh.Controllers
             data.SubmitChanges();
             return RedirectToAction("ListSach");
         }
+        public string ProcessUpload(HttpPostedFileBase file)
+        {
+            if (file == null)
+            {
+                return "";
+            }
+
+            file.SaveAs(Server.MapPath("~/Content/images/" + file.FileName));
+
+            return "/Content/images/" + file.FileName;
+        }
+
     }
 }
