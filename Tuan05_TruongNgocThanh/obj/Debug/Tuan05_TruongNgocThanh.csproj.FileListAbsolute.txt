@@ -77,3 +77,7 @@ C:\Users\truon\Desktop\testHTML\thucHanh\github\Tuan05_TruongNgocThanh\Tuan05_Tr
 C:\Users\truon\Desktop\testHTML\thucHanh\github\Tuan05_TruongNgocThanh\Tuan05_TruongNgocThanh\obj\Debug\Tuan05_TruongNgocThanh.csproj.CopyComplete
 C:\Users\truon\Desktop\testHTML\thucHanh\github\Tuan05_TruongNgocThanh\Tuan05_TruongNgocThanh\obj\Debug\Tuan05_TruongNgocThanh.dll
 C:\Users\truon\Desktop\testHTML\thucHanh\github\Tuan05_TruongNgocThanh\Tuan05_TruongNgocThanh\obj\Debug\Tuan05_TruongNgocThanh.pdb
+C:\Users\truon\Desktop\testHTML\thucHanh\github\Tuan05_TruongNgocThanh\Tuan05_TruongNgocThanh\bin\PagedList.dll
+C:\Users\truon\Desktop\testHTML\thucHanh\github\Tuan05_TruongNgocThanh\Tuan05_TruongNgocThanh\bin\PagedList.Mvc.dll
+C:\Users\truon\Desktop\testHTML\thucHanh\github\Tuan05_TruongNgocThanh\Tuan05_TruongNgocThanh\bin\PagedList.xml
+C:\Users\truon\Desktop\testHTML\thucHanh\github\Tuan05_TruongNgocThanh\Tuan05_TruongNgocThanh\bin\PagedList.Mvc.xml

@@ -1,17 +1,25 @@
-﻿using System;
+﻿using PagedList;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Tuan05_TruongNgocThanh.Models;
 
 namespace Tuan05_TruongNgocThanh.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        MyDataDataContext data = new MyDataDataContext();
+        public ActionResult Index(int ? page)
         {
-            return View();
+            if (page == null) page = 1;
+            int pageSize = 3;
+            int pageNum = page?? 1;
+            var all_sach = (from s in data.Saches select s).OrderBy(m=>m.masach);
+            return View(all_sach.ToPagedList(pageNum, pageSize));
         }
+
 
         public ActionResult About()
         {
