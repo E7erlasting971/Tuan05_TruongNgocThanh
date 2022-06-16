@@ -18,7 +18,7 @@ namespace Tuan05_TruongNgocThanh.Controllers
         [Display(Name = "Giá bán")]
         public Double giaban { get; set; }
         [Display(Name = "Số lượng")]
-        public Double iSoluong { get; set; }
+        public int iSoluong { get; set; }
         [Display(Name = "Thành tiền")]
         public Double    dThanhtien { get { return iSoluong * giaban; } }
         public Giohang (int id)
